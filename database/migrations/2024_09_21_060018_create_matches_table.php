@@ -19,7 +19,7 @@ class CreateMatchesTable extends Migration
             $table->uuid('home_team_id');
             $table->uuid('away_team_id');
             $table->tinyInteger('status_id');
-            $table->integer('match_time');
+            $table->timestamp('match_time');
             $table->json('home_scores')->nullable();
             $table->json('away_scores')->nullable();
             $table->timestamps();

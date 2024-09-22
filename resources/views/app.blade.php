@@ -19,7 +19,6 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
-        border-bottom: 1px solid #ddd;
         background-color: #fff;
         margin-bottom: 5px;
     }
@@ -29,8 +28,11 @@
         align-items: center;
         font-weight: bold;
         font-size: 14px;
-        color: #777;
+        color: #333;
         margin-bottom: 10px;
+        background-color:#ddd;
+        padding: 13px;
+        border-radius: 2px;
     }
 
     .match-header .flag {
@@ -41,10 +43,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom: #ddd 1px solid;
+        margin-top: 15px;
+        padding-bottom: 20px;
     }
 
     .time {
-        color: #555;
+        color:#777;
+        font-weight: 600;
         font-size: 14px;
     }
 
@@ -57,7 +63,7 @@
         display: flex;
         align-items: center;
         flex-grow: 1;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .home-team, .away-team {
@@ -76,6 +82,45 @@
     .half-time {
         font-size: 14px;
         color: #777;
+    }
+
+    .home-name {
+        position: relative;
+        width: 400px;
+        text-align: end;
+        padding-right: 40px;
+        bottom: 5px;
+    }
+
+    .away-name {
+        position: relative;
+        bottom: 5px;
+    }
+    .half-time-score {
+        color:#777;
+        font-weight: 600;
+        text-align: end;
+    }
+    .corner-score {
+        color:#777;
+        font-weight: 600;
+        text-align: end;
+    }
+    .country-logo {
+        width: 30px;
+        height: 20px;
+    }
+    .match-score {
+        display: flex;
+        font-weight: bold;
+        color:#e74c3c
+    }
+
+    .team-logo {
+        position: relative;
+        top: 5px;
+        width: 20px;
+        height: 20px;
     }
     </style>
 </head>

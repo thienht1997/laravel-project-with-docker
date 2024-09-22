@@ -97,6 +97,7 @@ class DatabaseSeeder extends Seeder
     {
         $teamIds = $teams->pluck('id')->toArray();
         $numMatches = 5;
+        $startTime = now()->minute(0)->second(0);
 
         for ($i = 0; $i < $numMatches; $i++) {
             $randomTeams = array_rand($teamIds, 2);
@@ -109,10 +110,12 @@ class DatabaseSeeder extends Seeder
                 'home_team_id' => $homeTeamId,
                 'away_team_id' => $awayTeamId,
                 'status_id' => 1,
-                'match_time' => time(),
-                'home_scores' => json_encode([rand(0, 5), 0, 0, 0, -1, 0, 0]),
-                'away_scores' => json_encode([rand(0, 5), 0, 0, 0, -1, 0, 0]),
+                'match_time' => $startTime->format('Y-m-d H:i:s'),
+                'home_scores' => ([rand(0, 5), 0, 0, 0, 1, 0, 0]),
+                'away_scores' => ([rand(0, 5), 0, 0, 0, 1, 0, 0]),
             ]);
+
+            $startTime->addMinutes(15);
         }
     }
 }

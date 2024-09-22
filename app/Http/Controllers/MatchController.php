@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Competition;
 class MatchController extends Controller
 {
     public function index()
     {
-        $matches = \App\Models\Matches::with('homeTeam', 'awayTeam', 'competition')->get();
+        $competition_with_matches = Competition::with('matches.homeTeam', 'matches.awayTeam')->get();
 
-        return view('matches.index', compact('matches'));
+        return view('matches.index', compact('competition_with_matches'));
     }
 }
